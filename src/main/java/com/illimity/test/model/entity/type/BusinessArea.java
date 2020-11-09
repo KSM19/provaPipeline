@@ -1,4 +1,4 @@
-package com.illimity.test.model.entity;
+package com.illimity.test.model.entity.type;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TechnicalShape {
+public class BusinessArea {
     private String id;
     private String name;
     private LocalDateTime updatedAt;

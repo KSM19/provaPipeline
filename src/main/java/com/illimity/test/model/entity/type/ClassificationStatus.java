@@ -1,4 +1,4 @@
-package com.illimity.test.model.entity;
+package com.illimity.test.model.entity.type;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
