@@ -1,0 +1,19 @@
+#SET maven profile to local to use this file from resource directory
+spring:
+  profiles:
+    active: local
+logging:
+  root: INFO
+  app: INFO
+  log4j2-layout: plain
+  logger-name: com.illimity.test
+cors:
+  mapping: /**
+  allowed_methods: HEAD, GET, PUT, POST, DELETE, PATCH
+jwt:
+  auth:
+    path:
+      whitelist: /actuator/health
+    entitlement:
+      retriever:
+        endpoint: #{sca_endpoint}#/jwtuserentitlement

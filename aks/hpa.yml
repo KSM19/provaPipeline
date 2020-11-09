@@ -1,0 +1,17 @@
+apiVersion: #{aks_hpa_version}#
+kind: HorizontalPodAutoscaler
+metadata:
+  labels:
+    app: prova
+    type: hpa
+    version: v1
+  name: prova
+  namespace: services
+spec:
+  maxReplicas: 5
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: #{aks_deployment_version}#
+    kind: Deployment
+    name: prova
+  targetCPUUtilizationPercentage: 70

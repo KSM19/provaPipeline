@@ -1,0 +1,17 @@
+apiVersion: #{aks_destination_rule_version}#
+kind: DestinationRule
+metadata:
+  name: prova
+  namespace: services
+spec:
+  host: prova
+  trafficPolicy:
+    loadBalancer:
+      simple: LEAST_CONN
+    outlierDetection:
+      consecutiveErrors: 3
+      interval: 4m
+      baseEjectionTime: 10m
+      maxEjectionPercent: 20
+    tls:
+      mode: DISABLE

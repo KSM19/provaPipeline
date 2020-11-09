@@ -1,0 +1,48 @@
+apiVersion: #{aks_vs_version}#
+kind: VirtualService
+metadata:
+  name: vs-prova
+  namespace: services
+spec:
+  hosts: #{istio_hosts}#
+  gateways:
+    - default/corp-illimity-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /todo-basepath/swagger/
+      rewrite:
+        uri: "/swagger"
+      route:
+        - destination:
+            host: prova
+            port:
+              number: 8080
+    - match:
+        - uri:
+            prefix: /todo-basepath/
+      rewrite:
+        uri: "/"
+      route:
+        - destination:
+            host: prova
+            port:
+              number: 8080
+      retries:
+        attempts: 3
+        perTryTimeout: 2s
+        retryOn: gateway-error,connect-failure,refused-stream
+    - match:
+        - uri:
+            prefix: /todo-basepath
+      rewrite:
+        uri: "/"
+      route:
+        - destination:
+            host: prova
+            port:
+              number: 8080
+      retries:
+        attempts: 3
+        perTryTimeout: 2s
+        retryOn: gateway-error,connect-failure,refused-stream

@@ -1,0 +1,22 @@
+apiVersion: #{aks_cm_version}#
+data:
+  application.yml: |-
+    spring:
+      profiles:
+        active: #{spring_profile}#
+    logging:
+      root: #{log_level_root}#
+      app: #{log_level_app}#
+      log4j2-layout: #{log4j2_layout}#
+      logger-name: com.illimity.test
+    jwt:
+      auth:
+        path:
+          whitelist: /actuator/health
+        entitlement:
+          retriever:
+            endpoint: #{sca_endpoint}#/jwtuserentitlement
+kind: ConfigMap
+metadata:
+  name: configmap-prova
+  namespace: services
