@@ -1,4 +1,4 @@
-package com.illimity.test.resource.entity;
+package com.illimity.test.model.entity;
 
 public class Dossier {
     private String id;

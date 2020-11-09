@@ -1,8 +1,8 @@
 package com.illimity.test.service.impl;
 
 import com.illimity.test.repository.DossierRepository;
-import com.illimity.test.resource.dto.DossierDTO;
-import com.illimity.test.resource.request.PatchDossierRequest;
+import com.illimity.test.model.dto.DossierDTO;
+import com.illimity.test.model.request.PatchDossierRequest;
 import com.illimity.test.service.IDossierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

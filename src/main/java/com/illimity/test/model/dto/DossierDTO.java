@@ -1,4 +1,4 @@
-package com.illimity.test.resource.request;
+package com.illimity.test.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,6 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 @Builder
-public class PatchDossierRequest {
-    private String property;
+public class DossierDTO {
+    private String id;
 }

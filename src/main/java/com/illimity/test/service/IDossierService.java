@@ -1,7 +1,7 @@
 package com.illimity.test.service;
 
-import com.illimity.test.resource.dto.DossierDTO;
-import com.illimity.test.resource.request.PatchDossierRequest;
+import com.illimity.test.model.dto.DossierDTO;
+import com.illimity.test.model.request.PatchDossierRequest;
 
 import java.util.List;
 

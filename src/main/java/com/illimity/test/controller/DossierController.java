@@ -1,7 +1,7 @@
 package com.illimity.test.controller;
 
-import com.illimity.test.resource.dto.DossierDTO;
-import com.illimity.test.resource.request.PatchDossierRequest;
+import com.illimity.test.model.dto.DossierDTO;
+import com.illimity.test.model.request.PatchDossierRequest;
 import com.illimity.test.service.IDossierService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
