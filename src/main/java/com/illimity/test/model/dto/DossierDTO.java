@@ -46,4 +46,5 @@ public class DossierDTO {
     private String source;
     private List<String> corporateIds;
     private String notes;
+
 }

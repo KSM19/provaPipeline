@@ -32,7 +32,9 @@ public class DossierService implements IDossierService {
     public DossierDTO createDossier(DossierDTO dossierDTO) {
         //convert DTO to Entity
         Dossier dossier = new Dossier();
-        return dossierRepository.save(dossier);
+        dossierRepository.save(dossier);
+        return DossierDTO.builder()
+                .build();
     }
 
     @Override
@@ -44,7 +46,9 @@ public class DossierService implements IDossierService {
     public DossierDTO updateDossier(DossierDTO dossierDTO) {
         //convert DTO to Entity
         Dossier dossier = new Dossier();
-        return dossierRepository.save(dossier);
+        dossierRepository.save(dossier);
+        return DossierDTO.builder()
+                .build();
     }
 
     @Override
