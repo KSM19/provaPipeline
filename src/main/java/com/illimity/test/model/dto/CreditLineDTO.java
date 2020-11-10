@@ -7,6 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 @Builder
-public class CorporateDTO {
+public class CreditLineDTO {
     private String id;
 }

@@ -5,7 +5,7 @@ import com.illimity.test.model.response.GetDossiersResponse;
 import com.illimity.test.repository.DossierRepository;
 import com.illimity.test.model.dto.DossierDTO;
 import com.illimity.test.model.request.PatchDossierRequest;
-import com.illimity.test.service.IDossierService;
+import com.illimity.test.service.DossierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Service
-public class DossierService implements IDossierService {
+public class DossierServiceImp implements DossierService {
 
     @Autowired
     private DossierRepository dossierRepository;
