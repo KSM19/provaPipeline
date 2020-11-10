@@ -5,7 +5,7 @@ import com.illimity.test.model.request.PatchDossierRequest;
 
 import java.util.List;
 
-public interface IDossierService {
+public interface DossierService {
     List<DossierDTO> getDossiers();
 
     void createDossier(DossierDTO dossierDTO);
