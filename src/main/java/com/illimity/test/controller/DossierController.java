@@ -2,6 +2,7 @@ package com.illimity.test.controller;
 
 import com.illimity.test.model.dto.DossierDTO;
 import com.illimity.test.model.request.PatchDossierRequest;
+import com.illimity.test.model.response.GetDossiersResponse;
 import com.illimity.test.service.IDossierService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,13 +21,13 @@ public class DossierController {
     private IDossierService dossierService;
 
     @GetMapping(value = "/dossier")
-    public List<DossierDTO> getDossiers(){
+    public GetDossiersResponse getDossiers(){
         return dossierService.getDossiers();
     }
 
     @PostMapping(value = "/dossier")
-    public void createDossier(@RequestBody DossierDTO dossierDTO){
-        dossierService.createDossier(dossierDTO);
+    public DossierDTO createDossier(@RequestBody DossierDTO dossierDTO){
+        return dossierService.createDossier(dossierDTO);
     }
 
     @GetMapping(value = "/dossier/{id}")
@@ -34,11 +35,9 @@ public class DossierController {
         return dossierService.findDossierById(id);
     }
 
-    @PutMapping(value = "/dossier/{id}")
-    public void updateDossier(@PathVariable(value = "id") String id,
-                              @RequestBody DossierDTO dossierDTO){
-        dossierDTO.setId(id);
-        dossierService.updateDossier(dossierDTO);
+    @PutMapping(value = "/dossier")
+    public DossierDTO updateDossier(@RequestBody DossierDTO dossierDTO){
+       return dossierService.updateDossier(dossierDTO);
     }
 
     @DeleteMapping(value = "/dossier/{id}")
@@ -66,5 +65,8 @@ public class DossierController {
     public void createCreditLineDossier(@RequestBody DossierDTO dossierDTO){
         dossierService.createDossier(dossierDTO);
     }
+
+    @PostMapping
+    public
 
 }

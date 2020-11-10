@@ -1,5 +1,7 @@
 package com.illimity.test.service.impl;
 
+import com.illimity.test.model.entity.Dossier;
+import com.illimity.test.model.response.GetDossiersResponse;
 import com.illimity.test.repository.DossierRepository;
 import com.illimity.test.model.dto.DossierDTO;
 import com.illimity.test.model.request.PatchDossierRequest;
@@ -7,6 +9,7 @@ import com.illimity.test.service.IDossierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -16,13 +19,20 @@ public class DossierService implements IDossierService {
     private DossierRepository dossierRepository;
 
     @Override
-    public List<DossierDTO> getDossiers() {
-        return null;
+    public GetDossiersResponse getDossiers() {
+        List<DossierDTO> list = dossierRepository.findAll();
+        GetDossiersResponse response = new GetDossiersResponse();
+        response.setCount(BigDecimal.valueOf(list.size()-1));
+        for (DossierDTO d: list)
+            response.getData().add(d);
+        return response;
     }
 
     @Override
-    public void createDossier(DossierDTO dossierDTO) {
-
+    public DossierDTO createDossier(DossierDTO dossierDTO) {
+        //convert DTO to Entity
+        Dossier dossier = new Dossier();
+        return dossierRepository.save(dossier);
     }
 
     @Override
@@ -31,8 +41,10 @@ public class DossierService implements IDossierService {
     }
 
     @Override
-    public void updateDossier(DossierDTO dossierDTO) {
-
+    public DossierDTO updateDossier(DossierDTO dossierDTO) {
+        //convert DTO to Entity
+        Dossier dossier = new Dossier();
+        return dossierRepository.save(dossier);
     }
 
     @Override
