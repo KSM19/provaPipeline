@@ -20,11 +20,13 @@ public class DossierServiceImp implements DossierService {
 
     @Override
     public GetDossiersResponse getDossiers() {
-        List<DossierDTO> list = dossierRepository.findAll();
+        List<Dossier> list = dossierRepository.findAll();
         GetDossiersResponse response = new GetDossiersResponse();
         response.setCount(BigDecimal.valueOf(list.size()-1));
-        for (DossierDTO d: list)
-            response.getData().add(d);
+        for (Dossier d: list)
+            response.getData().add(
+
+            );
         return response;
     }
 

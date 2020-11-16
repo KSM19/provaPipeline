@@ -1,4 +1,4 @@
-package com.illimity.test.model.constant;
+package com.illimity.test.utils.constant;
 
 import lombok.experimental.UtilityClass;
 

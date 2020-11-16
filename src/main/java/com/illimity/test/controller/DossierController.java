@@ -3,7 +3,7 @@ package com.illimity.test.controller;
 import com.illimity.test.model.dto.DossierDTO;
 import com.illimity.test.model.request.PatchDossierRequest;
 import com.illimity.test.model.response.GetDossiersResponse;
-import com.illimity.test.service.IDossierService;
+import com.illimity.test.service.DossierService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class DossierController {
     private static final Logger LOGGER = LogManager.getLogger(DossierController.class);
 
     @Autowired
-    private IDossierService dossierService;
+    private DossierService dossierService;
 
     @GetMapping(value = "/dossier")
     public GetDossiersResponse getDossiers(){

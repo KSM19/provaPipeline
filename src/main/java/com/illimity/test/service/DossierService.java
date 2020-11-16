@@ -6,7 +6,7 @@ import com.illimity.test.model.response.GetDossiersResponse;
 
 import java.util.List;
 
-public interface IDossierService {
+public interface DossierService {
     GetDossiersResponse getDossiers();
 
     DossierDTO createDossier(DossierDTO dossierDTO);
